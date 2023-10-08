@@ -6,6 +6,7 @@ import { Oscar } from "./components/Oscar";
 import { Person } from "./components/Person";
 import { PersonList } from "./components/PersonList";
 import { Status } from "./components/Status";
+import { User } from "./components/User";
 
 enum StatusEnum {
   LOADING = "loading",
@@ -54,6 +55,7 @@ function App() {
 
       {/**Event Props **/}
       <Button handleClick={logMessage} />
+      <User />
     </>
   );
 }
