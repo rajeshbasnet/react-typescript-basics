@@ -8,6 +8,21 @@ type AuthUser = {
 export const User = () => {
   const [user, setUser] = useState<AuthUser | null>(null);
 
+  /**
+   * @heading TYPESCRIPT ASSERTION
+   *
+   * @detail We are lying to typescript saying, the emtpy object here is
+   * of type AuthUser. This will remove any "?" operators that checks if
+   * value is null or not because we are specifying the object {} we mentioned
+   * in useState({}) always has AuthUser value.
+   *
+   */
+  const [userType, setUserType] = useState<AuthUser>({} as AuthUser);
+
+  function test() {
+    console.log(userType.name); // Here, we don't need to add "?" operator
+  }
+
   const handleLogin = (event: React.MouseEvent<HTMLButtonElement>) => {
     console.log(event.currentTarget.classList);
 
