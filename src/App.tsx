@@ -3,6 +3,7 @@ import { Button } from "./components/Button";
 import { Counter } from "./components/Counter";
 import { Greet } from "./components/Greet";
 import { Heading } from "./components/Heading";
+import { List } from "./components/List";
 import { Oscar } from "./components/Oscar";
 import { Person } from "./components/Person";
 import { PersonList } from "./components/PersonList";
@@ -40,6 +41,21 @@ function App() {
     console.log("Testing event props...");
   }
 
+  let itemList = [
+    {
+      first: "Bruce",
+      last: "Wayne",
+    },
+    {
+      first: "Clark",
+      last: "Kent",
+    },
+    {
+      first: "Princess",
+      last: "Diana",
+    },
+  ];
+
   return (
     <>
       <Greet name="Rajesh" messageCount={10} isLoggedIn={false} />
@@ -58,6 +74,14 @@ function App() {
       <Button handleClick={logMessage} />
       <User />
       <Counter />
+
+      {/* <List
+        items={["Batman", "Superman", "Wonder Woman"]}
+        onClick={(item) => console.log(item)}
+      />
+      <List items={[1, 2, 3]} onClick={(item) => console.log(item)} /> */}
+
+      <List items={itemList} onClick={(item) => console.log(item)} />
     </>
   );
 }
